@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        #seats {
+            display: grid;
+            grid-template-columns: repeat(7, 40px);
+            grid-template-rows: repeat(9, 40px);
+            grid-gap: 5px;
+            padding: 20px;
+        }
+
+        .seat {
+            width: 40px;
+            height: 40px;
+            background-color: #4CAF50;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+        }
+        
+        #blackboard {
+            margin-top: 50px;
+            border-top: 5px solid black;
+            width: 200px;
+        }
+
+        button.randomseat {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #5e4caf;
+            border: none;
+            border-radius: 5px;
+            color: white;
+        }
+
+        button#settings-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- <header>
+        <button id="settings-button" title="Settings">
+            <img src="gear.svg" alt="Settings" width="30" height="30">
+        </button>
+    </header> -->
+    <div id="seats">
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+    </div>
+    <div id="blackboard">
+        <h2 style="text-align: center;">Blackboard</h2>
+    </div>
+
+    <button class="randomseat">
+        Select Random Seat
+    </button>
+
+
+    <script>
+        const seats = document.querySelectorAll('.seat');
+        const blackboard = document.getElementById('blackboard');
+
+        document.querySelector('button.randomseat').addEventListener('click', () => {
+            seats.forEach(seat => { seat.style.backgroundColor = '#4CAF50'; seat.innerHTML = ''; });
+            const randomIndex = Math.floor(Math.random() * seats.length);
+            const selectedSeat = seats[randomIndex];
+            selectedSeat.style.backgroundColor = 'red';
+
+            selectedSeat.innerHTML = `<span style="color: white; font-weight: bold;">${randomIndex+1}</span>`;
+
+        });
+    </script>
+
+</body>
+</html>
